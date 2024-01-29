@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+    }
+    /* ---------------------- */
+
+.container{
+/* border: 2px solid red; */
+width: 90vw;
+display: flex;
+justify-content: center;
+}
+.panel{
+background-position: center;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+color: white;
+border-radius: 50px;
+height: 80vh;
+margin: 0 10px;
+flex: 0.5;
+cursor: pointer;
+position: relative;
+transition: all 1s ease-in-out;
+}
+.panel h3{
+font-size: 20px;
+position: absolute;
+bottom: 20px;
+left: 20px;
+opacity: 0;
+margin: 0;
+}
+.panel.active{
+flex: 5;
+}
+.panel.active h3{
+opacity: 1;
+color: aquamarine;
+left: 25%;
+font-size: 40px;
+text-transform: uppercase;
+}
+@media (max-width:480px){
+.container{
+    width: 100vw;
+}
+.panel.active h3{
+    font-size: 20px;
+    left: 20%;
+}
+.panel:nth-of-type(4),.panel:nth-of-type(5){
+    display: none;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class="panel active" style="background-image: url('https://images.unsplash.com/photo-1682685797303-0ad51eb23e13?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8');">
+    <h3>Lorem, ipsum dolor.</h3>    
+</div>
+<div class="panel " style="background-image: url('https://images.unsplash.com/photo-1698900691428-d81c32ae3d8f?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHx8');">
+    <h3>Lorem, ipsum dolor.</h3>    
+</div>
+<div class="panel " style="background-image: url('https://images.unsplash.com/photo-1698694326947-fbe17148becb?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8photo-1682685797303-0ad51eb23e13?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8');">
+    <h3>Lorem, ipsum dolor.</h3>    
+</div>
+<div class="panel " style="background-image: url('https://images.unsplash.com/photo-1698843642295-27b4ad30c7ec?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHx8');">
+    <h3>Lorem, ipsum dolor.</h3>    
+</div>
+<div class="panel " style="background-image: url('https://plus.unsplash.com/premium_photo-1673435845864-e8dcfbd919d1?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8');">
+    <h3>Lorem, ipsum dolor.</h3>    
+</div>
+</div>
+
+<script>
+let panels = document.querySelectorAll('.panel')
+console.log(panels);
+
+panels.forEach((ele)=>{
+ele.addEventListener('click',function(){
+console.log(152);
+removeActiveClass()
+ele.classList.add('active')
+})
+})
+
+function removeActiveClass(){
+panels.forEach(ele=>{
+    ele.classList.remove('active')
+})
+}
+</script>
+</body>
+</html>
